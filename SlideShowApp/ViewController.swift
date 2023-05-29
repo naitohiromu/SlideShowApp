@@ -8,12 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let sampleImage = UIImage(named:"Iwindowsxp_wallpaper")
+        image.image = sampleImage
     }
-
 
 }
 
