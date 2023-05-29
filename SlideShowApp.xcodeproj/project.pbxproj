@@ -13,6 +13,7 @@
 		117E1EA52A2437E700B0A594 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117E1EA32A2437E700B0A594 /* Main.storyboard */; };
 		117E1EA72A2437E900B0A594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117E1EA62A2437E900B0A594 /* Assets.xcassets */; };
 		117E1EAA2A2437E900B0A594 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117E1EA82A2437E900B0A594 /* LaunchScreen.storyboard */; };
+		117E1EB22A24460A00B0A594 /* ExpandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117E1EB12A24460A00B0A594 /* ExpandViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		117E1EA62A2437E900B0A594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		117E1EA92A2437E900B0A594 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		117E1EAB2A2437E900B0A594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		117E1EB12A24460A00B0A594 /* ExpandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				117E1E9D2A2437E700B0A594 /* AppDelegate.swift */,
 				117E1E9F2A2437E700B0A594 /* SceneDelegate.swift */,
 				117E1EA12A2437E700B0A594 /* ViewController.swift */,
+				117E1EB12A24460A00B0A594 /* ExpandViewController.swift */,
 				117E1EA32A2437E700B0A594 /* Main.storyboard */,
 				117E1EA62A2437E900B0A594 /* Assets.xcassets */,
 				117E1EA82A2437E900B0A594 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117E1EB22A24460A00B0A594 /* ExpandViewController.swift in Sources */,
 				117E1EA22A2437E700B0A594 /* ViewController.swift in Sources */,
 				117E1E9E2A2437E700B0A594 /* AppDelegate.swift in Sources */,
 				117E1EA02A2437E700B0A594 /* SceneDelegate.swift in Sources */,
