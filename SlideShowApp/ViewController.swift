@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
+    @IBAction func tapImage(_ sender: Any) {
+        print("タップ")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
