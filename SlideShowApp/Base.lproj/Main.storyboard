@@ -68,13 +68,14 @@
                     </view>
                     <connections>
                         <outlet property="image" destination="0u7-V5-qib" id="Peg-fF-slq"/>
+                        <outlet property="ss_button" destination="Ck3-UW-IX1" id="bxl-L0-7WV"/>
+                        <segue destination="ANN-ch-zLa" kind="show" identifier="moveExpandImage" id="n2C-Jz-vPT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aMT-s3-lQE">
                     <connections>
-                        <action selector="tapImage:" destination="BYZ-38-t0r" id="6kk-tE-f7t"/>
-                        <segue destination="ANN-ch-zLa" kind="show" id="01d-Sk-HwK"/>
+                        <action selector="tapImage:" destination="BYZ-38-t0r" id="0ee-Zw-vgu"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

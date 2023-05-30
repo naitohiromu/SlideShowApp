@@ -10,11 +10,11 @@ import UIKit
 class ExpandViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     
-    //var expandImage:String = ""
+    var expandImage:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let sampleImage = UIImage(named:"Iwindowsxp_wallpaper")
+        let sampleImage = UIImage(named:expandImage)
         image.image = sampleImage
         // Do any additional setup after loading the view.
     }

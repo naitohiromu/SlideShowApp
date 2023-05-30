@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var progress_slide:Int = 0
     @IBOutlet weak var image: UIImageView!
     
+    @IBOutlet weak var ss_button: UIButton!
     // タイマー
     var timer: Timer!
     // タイマー用の時間のための変数
@@ -20,11 +21,20 @@ class ViewController: UIViewController {
     
     @IBAction func unwind(_ segue:UIStoryboardSegue) {
     }
-    
+    @IBAction func tapImage(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "moveExpandImage", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let expandViewController:ExpandViewController = segue.destination as! ExpandViewController
+        
+        expandViewController.expandImage = wall_image[current_view]
+    }
+    /*
     @IBAction func tapImage(_ sender: Any) {
         //let expandViewController:ExpandViewController =
         print("タップ")
     }
+     */
     /*
     @IBAction func tapImage(for segue:UIStoryboardSegue, sender: Any?) {
         //let expandViewController:ExpandViewController = segue.destination as! ExpandViewController
@@ -66,6 +76,7 @@ class ViewController: UIViewController {
             progress_slide = 1
             self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
             print("start")
+            ss_button.setTitle("停止", for: .normal)
             
         }
         else if(self.timer != nil){
@@ -73,8 +84,10 @@ class ViewController: UIViewController {
             self.timer.invalidate()   // タイマーを停止する
             self.timer = nil          // startTimer() の self.timer == nil で判断するために、 self.timer = nil としておく
             print("stop")
+            ss_button.setTitle("再生", for: .normal)
         }
     }
+
     @objc func updateTimer(_ timer: Timer) {
         self.timer_sec += 0.1
         if(self.timer_sec >= 2){
