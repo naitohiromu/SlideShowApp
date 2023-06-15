@@ -8,12 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var wall_image: Array<String> = ["Iwindowsxp_wallpaper","Windows-Vista_R","Windows7","windows8_tips"]
+    var wall_image: Array<String> = ["Iwindowsxp_wallpaper.jpg","Windows-Vista_R.png","Windows7.jpg","windows8_tips.jpg"]
     var current_view:Int = 0
     var progress_slide:Int = 0
     @IBOutlet weak var image: UIImageView!
     
     @IBOutlet weak var ss_button: UIButton!
+    @IBOutlet weak var n_button: UIButton!
+    @IBOutlet weak var p_button: UIButton!
+    
     // タイマー
     var timer: Timer!
     // タイマー用の時間のための変数
@@ -25,6 +28,15 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "moveExpandImage", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(self.timer != nil){
+            progress_slide = 0
+            self.timer.invalidate()   // タイマーを停止する
+            self.timer = nil          // startTimer() の self.timer == nil で判断するために、 self.timer = nil としておく
+            print("stop")
+            ss_button.setTitle("再生", for: .normal)
+            n_button.isEnabled = true
+            p_button.isEnabled = true
+        }
         let expandViewController:ExpandViewController = segue.destination as! ExpandViewController
         
         expandViewController.expandImage = wall_image[current_view]
@@ -74,9 +86,11 @@ class ViewController: UIViewController {
     
         if self.timer == nil {
             progress_slide = 1
-            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
             print("start")
             ss_button.setTitle("停止", for: .normal)
+            n_button.isEnabled = false
+            p_button.isEnabled = false
             
         }
         else if(self.timer != nil){
@@ -85,19 +99,18 @@ class ViewController: UIViewController {
             self.timer = nil          // startTimer() の self.timer == nil で判断するために、 self.timer = nil としておく
             print("stop")
             ss_button.setTitle("再生", for: .normal)
+            n_button.isEnabled = true
+            p_button.isEnabled = true
         }
     }
 
     @objc func updateTimer(_ timer: Timer) {
-        self.timer_sec += 0.1
-        if(self.timer_sec >= 2){
-            self.timer_sec -= 2
-            current_view+=1
-            if(current_view == 4){
-                current_view = 0
-            }
-            image.image = UIImage(named:wall_image[current_view])
+        current_view+=1
+        if(current_view == 4){
+            current_view = 0
         }
+        image.image = UIImage(named:wall_image[current_view])
     }
+    
     
 }
